@@ -1,5 +1,6 @@
 import { Injectable, HttpService } from '@nestjs/common';
-import { headers, coronaApiURL, UrlPart } from 'src/app_Constants/constants';
+import { coronaApiURL, UrlPart } from '../app_Constants/constants';
+import { headers } from './../../config'
 import axios from 'axios';
 
 @Injectable()

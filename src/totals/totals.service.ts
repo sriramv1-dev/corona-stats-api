@@ -1,5 +1,7 @@
 import { Injectable, HttpService, Param } from '@nestjs/common';
-import { coronaApiURL, config, UrlPart, headers } from '../app_Constants/constants'
+import { coronaApiURL, config, UrlPart } from '../app_Constants/constants'
+import { headers } from './../../config'
+
 
 @Injectable()
 export class TotalsService {
