@@ -40,4 +40,14 @@ export class CountryController {
     async getDailyReportAllCountries(@Param('date') date: string) {
         return await this.countryService.getDailyReportAllCountries(date);
     }
+
+    // custom
+    @Get('/getAllCountriesReportByDateRange/:startDate/:endDate')
+    async getAllCountriesReportByDateRange(
+        @Param('startDate') startDate: string,
+        @Param('endDate') endDate: string
+    ) {
+        return await this.countryService
+            .getAllCountriesReportByDateRange(startDate, endDate);
+    }
 }

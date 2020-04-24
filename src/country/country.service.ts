@@ -2,6 +2,7 @@ import { Injectable, HttpService } from '@nestjs/common';
 import { coronaApiURL, UrlPart } from '../app_Constants/constants';
 import { headers } from './../../config'
 import axios from 'axios';
+var moment = require('moment');
 
 @Injectable()
 export class CountryService {
@@ -105,6 +106,21 @@ export class CountryService {
             console.log('No response received for GET Api Call');
         }
         return response.data;
+    }
+
+    async getAllCountriesReportByDateRange(startDate: string, endDate: string) {
+        // 2020-04-01
+        const sDate = moment(startDate).format('MM-DD-YYYY');
+        const eDate = moment(endDate).format('MM-DD-YYYY');
+        const range = moment().range(sDate, eDate);
+        const diff = range.diff('days');
+        const array = range.toArray('days');
+        array.forEach(element => {
+            console.log(element)
+        });
+        const dateRange = [];
+        return dateRange;
+
     }
 }
 
